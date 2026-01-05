@@ -1,0 +1,11 @@
+server:
+  port: 8081
+
+proxy:
+  dashscope-base-url: "https://dashscope.aliyuncs.com"
+  dashscope-api-key: "${DASHSCOPE_API_KEY:}"
+  dashscope-model: "qwen-image-max"
+  require-openai-key: false
+  openai-key: "${OPENAI_IMAGE_PROXY_KEY:}"
+  prompt-extend: false
+  watermark: false
