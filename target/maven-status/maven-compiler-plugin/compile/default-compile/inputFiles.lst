@@ -1,8 +1,0 @@
-D:\Program Files\kaifa\dashscope-image-proxy\src\main\java\com\example\imgproxy\dto\dashscope\DashScopeImageResponse.java
-D:\Program Files\kaifa\dashscope-image-proxy\src\main\java\com\example\imgproxy\config\ProxyProperties.java
-D:\Program Files\kaifa\dashscope-image-proxy\src\main\java\com\example\imgproxy\ImgProxyApplication.java
-D:\Program Files\kaifa\dashscope-image-proxy\src\main\java\com\example\imgproxy\dto\dashscope\DashScopeImageRequest.java
-D:\Program Files\kaifa\dashscope-image-proxy\src\main\java\com\example\imgproxy\dto\openai\OpenAiImageRequest.java
-D:\Program Files\kaifa\dashscope-image-proxy\src\main\java\com\example\imgproxy\service\DashScopeImageService.java
-D:\Program Files\kaifa\dashscope-image-proxy\src\main\java\com\example\imgproxy\controller\OpenAiImagesController.java
-D:\Program Files\kaifa\dashscope-image-proxy\src\main\java\com\example\imgproxy\dto\openai\OpenAiImageResponse.java
