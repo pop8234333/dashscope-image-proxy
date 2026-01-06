@@ -9,6 +9,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 @EnableConfigurationProperties(ProxyProperties.class)
 public class ImgProxyApplication {
     public static void main(String[] args) {
+        // Spring Boot 启动入口
         SpringApplication.run(ImgProxyApplication.class, args);
     }
 }

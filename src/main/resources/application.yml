@@ -7,5 +7,5 @@ proxy:
   dashscope-model: "qwen-image-max"
   require-openai-key: false
   openai-key: "${OPENAI_IMAGE_PROXY_KEY:}"
-  prompt-extend: false
-  watermark: false
+  prompt-extend: true
+  watermark: false # true 会导致图片模糊

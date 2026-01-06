@@ -11,12 +11,14 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DashScopeImageResponse {
 
+    // DashScope 输出对象
     private Output output;
 
     @Getter
     @Setter
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class Output {
+        // choices[0].message.content[0].image 为图片 URL
         private List<Choice> choices;
     }
 
@@ -24,6 +26,7 @@ public class DashScopeImageResponse {
     @Setter
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class Choice {
+        // 单个候选消息
         private Message message;
     }
 
@@ -31,6 +34,7 @@ public class DashScopeImageResponse {
     @Setter
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class Message {
+        // message.content 是数组，元素包含 image 字段
         private List<Content> content;
     }
 
@@ -38,6 +42,7 @@ public class DashScopeImageResponse {
     @Setter
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class Content {
+        // 图片 URL（DashScope 返回的签名 OSS 地址）
         private String image;
     }
 }

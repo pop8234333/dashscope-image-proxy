@@ -1,0 +1,36 @@
+services:
+  dashscope-image-adapter:
+    build: .
+    image: dashscope-image-adapter:1.0
+    container_name: dashscope-image-adapter
+    expose:
+      - "8081"
+    environment:
+      DASHSCOPE_API_KEY: ${DASHSCOPE_API_KEY}
+      PROXY_DASHSCOPE_BASE_URL: https://dashscope.aliyuncs.com
+      # PROXY_DASHSCOPE_BASE_URL: https://dashscope-intl.aliyuncs.com
+      PROXY_DASHSCOPE_MODEL: qwen-image-max
+      PROXY_PROMPT_EXTEND: "false"
+      PROXY_WATERMARK: "false"
+    restart: unless-stopped
+
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    ports:
+      - "3000:8080"
+    environment:
+      ENABLE_IMAGE_GENERATION: "true"
+      IMAGE_GENERATION_ENGINE: openai
+      IMAGES_OPENAI_API_BASE_URL: http://dashscope-image-adapter:8081/v1
+      IMAGES_OPENAI_API_KEY: dummy
+      IMAGE_GENERATION_MODEL: dashscope-image
+      # ENABLE_PERSISTENT_CONFIG: "false"
+    volumes:
+      - open-webui:/app/backend/data
+    depends_on:
+      - dashscope-image-adapter
+    restart: unless-stopped
+
+volumes:
+  open-webui:
